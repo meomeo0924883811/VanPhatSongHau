@@ -61,6 +61,11 @@ $('#map-slider').on('afterChange', function(event, slick, currentSlide){
     $('#area-links .tab-pane[data-id=' + (currentSlide + 1) + ']').addClass('active show');
 });
 
+$('#area-links .nav-link').click(function () {
+    let slide = $(this).data('id') -1;
+    $('#map-slider').slick('slickGoTo',slide);
+});
+
 $('.single-image-preview').click(function (){
     let slide = $(this).attr('order') - 1;
     $('#quality-images').slick('slickGoTo',slide);

@@ -10935,39 +10935,39 @@ h6,
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 36px;
 }
 
 h2,
 .page-visual-slider .visual-text .content {
-  font-size: 27px;
+  font-size: 30px;
 }
 
 h3,
 .page.home .block.quality-block .images-container .images-slider .quality-image .image-text {
-  font-size: 24px;
+  font-size: 27px;
 }
 
 h4,
 .page.home .block.project-overview-block .tabpane-container .nav-item.nav-link {
-  font-size: 20px;
+  font-size: 24px;
 }
 
 h5,
 .cta,
 form,
 input[type="text"] {
-  font-size: 18px;
+  font-size: 22px;
 }
 
 body,
 h6,
 .cta.cta-golden {
-  font-size: 15px;
+  font-size: 20px;
 }
 
 small {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 h1,
@@ -11076,7 +11076,7 @@ h3,
 h1 {
   position: relative;
   padding-bottom: 20px;
-  margin-bottom: 35px;
+  margin-bottom: 30px;
 }
 
 h1:before {
@@ -11695,12 +11695,13 @@ footer .footer-info img {
 
 .page.home .block.project-overview-block .tabpane-container .tab-content {
   margin-top: 45px;
-  padding: 60px 120px;
+  padding: 15px;
   background: #ebebeb;
 }
 
 .page.home .block.subscribe-block {
-  padding-bottom: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   background: #d0e1f2;
 }
 
@@ -11992,7 +11993,7 @@ footer .footer-info img {
 
 .page.home .block.nine-factorials-block .factorial .factorial-description {
   width: 62%;
-  min-height: 200px;
+  min-height: 270px;
   position: relative;
 }
 
@@ -12409,6 +12410,7 @@ footer .footer-info img {
   .page.home .block.nine-factorials-block .factorial .factorial-description {
     width: 100%;
     height: auto;
+    min-height: auto;
   }
 
   .page.home .block.nine-factorials-block .factorial .factorial-description .skew-label {

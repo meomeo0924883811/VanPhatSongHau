@@ -18263,8 +18263,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
+__webpack_require__(21);
 __webpack_require__(22);
-__webpack_require__(23);
 
 
 SE.clsPopup.init();
@@ -18319,6 +18319,11 @@ $('#map-slider').on('afterChange', function(event, slick, currentSlide){
     $('#area-links .tab-pane').removeClass('active show');
     $('#area-links .nav-link[data-id=' + (currentSlide + 1) + ']').addClass('active');
     $('#area-links .tab-pane[data-id=' + (currentSlide + 1) + ']').addClass('active show');
+});
+
+$('#area-links .nav-link').click(function () {
+    let slide = $(this).data('id') -1;
+    $('#map-slider').slick('slickGoTo',slide);
 });
 
 $('.single-image-preview').click(function (){
@@ -29333,8 +29338,7 @@ var TweenMaxBase = TweenMax;
 
 
 /***/ }),
-/* 21 */,
-/* 22 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function($, SE) {SE.clsPopup = (function () {
@@ -29379,7 +29383,7 @@ var TweenMaxBase = TweenMax;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(2)))
 
 /***/ }),
-/* 23 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function($, SE) {SE.clsSubscribe = (function() {

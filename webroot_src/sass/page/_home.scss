@@ -184,14 +184,15 @@
 
                 .tab-content {
                     margin-top: 45px;
-                    padding: 60px 120px;
+                    padding: 15px;
                     background: #ebebeb
                 }
             }
         }
 
         &.subscribe-block {
-            padding-bottom: 40px;
+            padding-top: 20px;
+            padding-bottom: 20px;
             background: $light-blue-for-block;
 
             .form-container {
@@ -456,7 +457,7 @@
 
                 .factorial-description {
                     width: 62%;
-                    min-height: 200px;
+                    min-height: 270px;
                     position: relative;
 
                     .skew-label {
@@ -889,6 +890,7 @@
                     .factorial-description {
                         width: 100%;
                         height: auto;
+                        min-height: auto;
 
                         .skew-label {
                             position: relative;
