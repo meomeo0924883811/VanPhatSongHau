@@ -32,7 +32,7 @@
                     </h4>
                     <form class="text-center">
                         <div class="form-group">
-                            <input type="text" class="form-control" id="hoten3" placeholder="Họ tên:"/>
+                            <input type="text" class="form-control" id="hoten3" placeholder="Tên anh/chị:"/>
                         </div>
                         <div class="form-group">
                             <input type="number" class="form-control" id="sdt3" placeholder="Số điện thoại:"/>

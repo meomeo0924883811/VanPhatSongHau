@@ -184,7 +184,7 @@
 
                 .tab-content {
                     margin-top: 45px;
-                    padding: 15px;
+                    padding: 40px 15px 15px;
                     background: #ebebeb
                 }
             }
@@ -777,7 +777,7 @@
 
                     .tab-content {
                         margin-top: 8.8vw;
-                        padding: 8vw 15px;
+                        padding: 11vw 15px 8vw
                     }
                 }
             }
@@ -851,6 +851,10 @@
                 padding-bottom: 6.5vw;
                 padding-left: 0;
                 padding-right: 0;
+
+                .pay-steps {
+                    padding: 0 6vw;
+                }
 
                 .pay-panel-detail {
                     display: block;

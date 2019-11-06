@@ -4,7 +4,7 @@
         <form method="post">
             <div class="form-container">
                 <div class="input-container">
-                    <input type="text" class="form-control" name="hoten1" id="hoten1" placeholder="Họ tên:"/>
+                    <input type="text" class="form-control" name="hoten1" id="hoten1" placeholder="Tên anh/chị:"/>
                 </div>
                 <div class="input-container">
                     <input type="number" class="form-control" name="sdt1" id="sdt1" placeholder="Số điện thoại:"/>
