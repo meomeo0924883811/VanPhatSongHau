@@ -36,6 +36,7 @@
 <a href="#" id="back-to-top"></a>
 <div class="fb-customerchat"
      page_id="2272385429514202"
+     theme_color="#D3D3D3"
      ref="live-chat">
 </div>
 

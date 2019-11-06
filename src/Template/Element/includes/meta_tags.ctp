@@ -12,4 +12,6 @@
 <meta property="og:image:height" content="630" />
 <meta property="og:url" content="Le Nhat Long" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Cache-control" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="-1" />

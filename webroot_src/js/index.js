@@ -90,6 +90,7 @@ div.setAttribute('page_id', '2272385429514202');
 div.setAttribute('ref', 'b64:Y2hhdC1saXZl');
 div.setAttribute('logged_in_greeting', 'Chào anh/chị!\nEm là Long, em có thể giúp gì cho anh chị không?.');
 div.setAttribute('logged_out_greeting', 'Chào anh/chị!\nEm là Long, em có thể giúp gì cho anh chị không?');
+div.setAttribute('theme_color', '#D3D3D3');
 document.body.appendChild(div);
 window.fbMessengerPlugins = window.fbMessengerPlugins || {
     init: function () {
