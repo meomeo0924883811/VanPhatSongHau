@@ -1,0 +1,74 @@
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 9999999999999;
+    background: rgba(0, 0, 0, 0.25);
+    top: 0;
+    left: 0;
+
+    &#popup-subscriber, &#loading, &#popup-image {
+        visibility: hidden;
+        display: none;
+        opacity: 0;
+    }
+
+    .popup-inner {
+        @include objAbsoluteMiddle;
+        width: 90%;
+        max-width: 992px;
+        height: auto;
+        background: url("images/popup-cover.png") top center no-repeat;
+        background-size: contain;
+
+        &:before {
+            float: left;
+            padding-top: 73%;
+            content: '';
+        }
+
+        .popup-content {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            padding: 20px;
+        }
+    }
+
+    &#loading {
+        background-image: url("images/loading.gif");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 32px 32px;
+        z-index: 99999;
+    }
+
+    &#popup-image img{
+        @include objAbsoluteMiddle;
+        width: calc(100% - 15px);
+        max-width: 1500px;
+        height: auto;
+    }
+}
+
+
+@include breakpoint(xs) {
+
+    .popup {
+
+        .popup-inner {
+            @include objAbsoluteMiddle;
+            width: calc(100% - 30px;);
+            height: auto;
+            background: #fff;
+            border-radius: 20px;
+
+            .popup-content {
+                position: relative;
+                bottom: auto;
+            }
+        }
+    }
+}

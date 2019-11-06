@@ -1,0 +1,16 @@
+.strength_meter {
+    position: absolute;
+    right: 20px;
+    width: 20%;
+    top: -5px;
+    white-space: nowrap;
+}
+.edit-password{position: relative} 
+.checkbox input[type=checkbox], .checkbox-inline input[type=checkbox], .radio input[type=radio], .radio-inline input[type=radio] {
+    margin-left: -10px !important;
+}
+
+.change_active .icon-ban{color:red}
+.change_status .icon-ban{color:red}
+.change_status .icon-check{color:green}
+.ct_center{text-align: center}

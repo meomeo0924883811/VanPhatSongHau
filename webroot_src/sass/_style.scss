@@ -1,0 +1,120 @@
+h1 {
+    position: relative;
+    padding-bottom: 20px;
+    margin-bottom: 35px;
+
+    &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 30%;
+        height: 2px;
+        max-width: 140px;
+        background: $blue-headline;
+    }
+}
+
+input[type="text"], input[type="number"] {
+    border-radius: 999px;
+    padding: 12px 25px;
+
+    &.error {
+        border: 1px solid #f00;
+    }
+}
+
+.medium-zoom--opened .medium-zoom-overlay {
+    z-index: 999999;
+}
+
+.medium-zoom-image--opened {
+    z-index: 1000000;
+}
+
+.cta {
+    display: inline-block;
+    border: none;
+    outline: none;
+    border-radius: 999px;
+    padding: 10px 33px;
+    background: #ffe972;
+    @include boxShadow(1px 1px 2px 0px rgba(0, 0, 0, 0.5));
+    @include appearanceNone;
+    cursor: pointer;
+
+    &-golden {
+        background: url("images/cta-bg.png") center center no-repeat;
+        background-size: 160%;
+    }
+}
+
+.slick-slide {
+    height: auto;
+}
+
+.slick-dots {
+    bottom: 5px;
+    z-index: 999;
+}
+
+.slick-dots li button:before {
+    content: '';
+    background: rgba(0, 0, 0, 0);
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #fff;
+    opacity: .75;
+}
+
+.slick-dots li.slick-active button:before {
+    opacity: 1;
+    background: #fff;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.open-image-popup {
+    cursor: pointer;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #000;
+    @include boxShadow(0px 0px 5px 0px rgba(0, 0, 0, 0.75));
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 888888;
+
+    &:before {
+        content: '';
+        position: absolute;
+        @include objAbsoluteMiddle;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid black;
+    }
+}
+
+@include breakpoint(mmd) {
+
+    h1 {
+        position: relative;
+        padding-bottom: 4vw;
+        margin-bottom: 5.2vw;
+    }
+}
+

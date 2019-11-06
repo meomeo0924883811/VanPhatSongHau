@@ -1,0 +1,95 @@
+footer {
+    overflow: hidden;
+
+    .footer-contact {
+        padding: 30px 70px;
+        background: $light-blue-for-block;
+
+    }
+
+    .footer-info {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        @include boxShadow(0 -2px 4px 0px rgba(0, 0, 0, 0.2));
+
+        img {
+            height: 12px;
+            width: auto;
+            display: inline-block;
+            margin-right: 5px;
+        }
+    }
+}
+
+.footer-icons {
+    margin-bottom: 20px;
+
+    a {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
+
+        &[order="1"] {
+            background: url("images/footer-phone.png") center center no-repeat;
+            background-size: cover;
+        }
+
+        &[order="2"] {
+            background: url("images/footer-mess.png") center center no-repeat;
+            background-size: cover;
+        }
+
+        &[order="3"] {
+            background: url("images/footer-zalo.png") center center no-repeat;
+            background-size: cover;
+        }
+
+        &[order="4"] {
+            background: url("images/footer-viber.png") center center no-repeat;
+            background-size: cover;
+        }
+    }
+}
+
+.footer-subscribe {
+
+    h4 {
+        position: relative;
+        padding-bottom: 10px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 25%;
+            max-width: 80px;
+            height: 2px;
+            background: $blue-content;
+        }
+    }
+
+    form {
+        margin-top: 15px;
+    }
+}
+
+@include breakpoint(xs) {
+
+    footer {
+
+        .footer-contact {
+            padding: 5vw 15px;
+        }
+
+        .footer-info {
+            padding-top: 4vw;
+            padding-bottom: 4vw;
+
+            img {
+                height: 3.5vw;
+            }
+        }
+    }
+}

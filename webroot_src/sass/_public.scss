@@ -1,0 +1,154 @@
+body {
+  font-family: 'Myriad Pro', arial, helvetica, sans-serif;
+  font-weight: normal;
+  line-height: 1.3;
+}
+
+strong, h1, h2, h3, h4, h5, h6
+, .cta.cta-golden
+, .page.home .block.project-overview-block .numbers-container .single-number-board
+, .page.home .block.project-overview-block .tabpane-container .nav-item.nav-link
+, .page.home .block.plus-points-block .plus-points-container .plus-point .plus-point-detail .plus-point-headline
+, .page.home .block.quality-block .images-container .images-slider .quality-image .image-text {
+  font-family: 'Myriad Pro', arial, helvetica, sans-serif;
+  font-weight: bold;
+  line-height: 1.3;
+}
+
+
+//FONT SIZE
+h1 {
+  font-size: 30px;
+}
+
+h2
+, .page-visual-slider .visual-text .content {
+  font-size: 27px;
+}
+
+h3
+, .page.home .block.quality-block .images-container .images-slider .quality-image .image-text {
+  font-size: 24px;
+}
+
+h4
+, .page.home .block.project-overview-block .tabpane-container .nav-item.nav-link {
+  font-size: 20px;
+}
+
+h5
+, .cta, form, input[type="text"] {
+  font-size: 18px;
+}
+
+body, h6
+, .cta.cta-golden {
+  font-size: 15px;
+}
+
+small {
+  font-size: 12px;
+}
+
+//COLOR
+h1
+, .page.home .block.featured-products-block .featured-products .single-featured-product .featured-product-info {
+  color: $blue-headline;
+}
+
+.page.home .block.nine-factorials-block .factorial:nth-child(odd) .factorial-description .skew-label .factorial-content, footer .footer-subscribe h4
+, .page.home .block.project-overview-block .numbers-container .single-number-board .board-content.board-number
+, .page.home .block.plus-points-block .plus-points-container .plus-point .plus-point-detail span
+, .page.home .block.pay-block .pay-panel-detail .pay-column:first-child {
+  color: $blue-content;
+}
+
+footer .footer-info {
+  color: $gray;
+}
+
+.page.home .block.nine-factorials-block .factorial .factorial-description .skew-label .factorial-content
+, .page.home .project-overview-block h1
+, .page.home .block.project-overview-block .numbers-container .single-number-board .board-text
+, .page.home .block.project-overview-block .tabpane-container .nav-item.nav-link.active
+, .page.home .block.pay-block .pay-panel-detail .pay-column
+, header a
+, header a:hover
+, .navbar-dark .navbar-nav .nav-link
+, .page-visual-slider .visual-text .content
+, .page.home .block.quality-block .images-container .images-preview .single-image-preview .text-preview
+, .page.home .block.quality-block .images-container .images-slider .quality-image .image-text {
+  color: #fff;
+}
+
+.page.home .block.project-overview-block .tabpane-container .nav-item.nav-link
+, .page.home .block.pay-block .pay-panel-detail .pay-column:last-child
+, .cta.cta-golden
+, .cta.cta-golden:hover {
+  color: #000;
+}
+
+    //STYLE
+h1, footer .footer-info
+, .page.home .block.featured-products-block .featured-products .single-featured-product
+, .page.home .block.project-overview-block .numbers-container .single-number-board
+, .page.home .block.project-overview-block .tabpane-container .nav-item.nav-link
+, .page.home .block.pay-block .pay-panel-detail .pay-column .pay-box
+, .page.home .block.quality-block .images-container .images-preview .single-image-preview .text-preview {
+  text-align: center;
+}
+
+//TEXT TRANSFORM
+h1, h3
+, .page.home .block.project-overview-block .tabpane-container .nav-item.nav-link {
+  text-transform: uppercase;
+}
+
+@include breakpoint(xs) {
+
+  //FONT SIZE
+  h1 {
+    font-size: 5.5vw;
+  }
+
+  h2
+  , .page-visual-slider .visual-text .content {
+    font-size: 5vw;
+  }
+
+  h3
+  , .page.home .block.quality-block .images-container .images-slider .quality-image .image-text {
+    font-size: 4.5vw;
+  }
+
+  h4
+  , .page.home .block.project-overview-block .tabpane-container .nav-item.nav-link {
+    font-size: 4.2vw;
+  }
+
+  h5
+  , .cta, form, input[type="text"] {
+    font-size: 3.8vw;
+  }
+
+  body, h6
+  , .cta.cta-golden {
+    font-size: 3.5vw;
+  }
+
+  small {
+    font-size: 2.8vw;
+  }
+
+  //STYLE
+  .page.home .block.nine-factorials-block .factorial .factorial-description .skew-label .factorial-content
+  , .page.home .block.subscribe-block .form-container
+  , .page-visual-slider .visual-text {
+    text-align: center;
+  }
+
+  .page.home .block.nine-factorials-block .factorial .factorial-description .skew-label .factorial-content ul
+  , .page.home .block.nine-factorials-block .factorial .factorial-description .skew-label .factorial-content span {
+    text-align: left;
+  }
+}

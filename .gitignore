@@ -1,0 +1,14 @@
+/tmp/*
+/logs/*
+/nbproject/*
+/webroot/.sass-cache/*
+/webroot/all*.js
+/.idea/*
+*/.idea/*
+
+/vendor/*
+/node_modules/*
+webroot/assets
+webroot/assets/*
+/webroot/assets
+/webroot/assets/*
