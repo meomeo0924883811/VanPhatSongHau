@@ -12,3 +12,4 @@ webroot/assets
 webroot/assets/*
 /webroot/assets
 /webroot/assets/*
+/info.txt
