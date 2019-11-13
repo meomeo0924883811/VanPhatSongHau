@@ -47,7 +47,11 @@
                                             <th><?= __('Phone') ?></th>
                                             <td><?= h($subscriber->phone) ?></td>
                                         </tr>
-                                                                                                                                                                                                    </tbody>
+                                                                                                                                                                                <tr>
+                                            <th><?= __('Created') ?></th>
+                                            <td><?= h($subscriber->created) ?></td>
+                                        </tr>
+                                                                                                                                                                    </tbody>
                             </table>
                         </div>
                     </div>

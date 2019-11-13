@@ -6,7 +6,7 @@ use Box\Spout\Common\Type;
 use Box\Spout\Writer\Style\StyleBuilder;
 use Box\Spout\Writer\WriterFactory;
 use Cake\Filesystem\File;
-
+use DateTime;
 /**
  * Subscribers Controller
  *
@@ -20,6 +20,7 @@ class SubscribersController extends AppController
      *
      * @return \Cake\Http\Response|null
      */
+
     public function index()
     {
         $option = ['conditions' => []];
@@ -30,6 +31,9 @@ class SubscribersController extends AppController
                     'phone LIKE' => "%" .$search. "%",
                 ]
             ];
+        }
+        if(!empty($this->request->getQuery("date"))){
+            $option['conditions'][]=['created >=' => new DateTime($this->request->getQuery("date").' days')];
         }
         $this->paginate = $option;
         $subscribers = $this->paginate($this->Subscribers);
@@ -126,9 +130,9 @@ class SubscribersController extends AppController
         if (!$filePath->exists()) {
 
             //$folder = new Folder(WWW_ROOT . 'files' . DS . 'excel');
-            $file = new File(WWW_ROOT . 'files' . DS . 'excel' . DS . 'products.xlsx', true, 0644);
+            $file = new File(WWW_ROOT . 'files' . DS . 'excel' . DS . 'subscribers.xlsx', true, 0644);
         }
-        $filePath = WWW_ROOT . 'files' . DS . 'excel' . DS . 'products.xlsx';
+        $filePath = WWW_ROOT . 'files' . DS . 'excel' . DS . 'subscribers.xlsx';
 
         $defaultStyle = (new StyleBuilder())
             ->setFontName('Arial')
@@ -141,6 +145,7 @@ class SubscribersController extends AppController
             'id' => 'Id',
             'name' => 'Name',
             'phone' => 'Phone',
+            'created' => 'Date subscribed',
         );
 
         $fields = array_keys($header);
@@ -154,7 +159,7 @@ class SubscribersController extends AppController
             $i = 0;
             $row = array();
             foreach ($header as $key => $value) {
-                $row[] = $subscriber[$key];
+                $row[] = strval($subscriber[$key]);
             }
             $writer->addRow($row);
         }

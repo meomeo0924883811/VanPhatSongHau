@@ -32,17 +32,37 @@
                         <div class="row">
                             <form method="get">
                                 <div class="col-md-4">
-                                    <input type="text" class="form-control" name="search" value="" placeholder="Input your keyword...">
+                                    <div>
+                                        <input type="text" class="form-control" name="search" value=""
+                                               placeholder="Input your keyword...">
+                                    </div>
+                                    <div>
+                                        <select class="form-control" style="margin-top: 10px;" name="date">
+                                            <option value="0">
+                                                All
+                                            </option>
+                                            <option value="-1">
+                                                Yesterday
+                                            </option>
+                                            <option value="-7">
+                                                Last 7 days
+                                            </option>
+                                            <option value="-14">
+                                                Last 14 days
+                                            </option>
+                                            <option value="-30">
+                                                Last 30 days
+                                            </option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="col-md-2">
                                     <div class="btn-group pull-left">
-                                        <button class="btn green" type="submit">Search</button>
+                                        <button type="submit" class="btn green" type="submit">Search</button>
                                     </div>
                                 </div>
                             </form>
-                            <div class="col-md-6">
-                            </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                                 <div class="btn-group pull-right">
                                     <button class="btn dropdown-toggle" data-toggle="dropdown">Tools <i
                                             class="fa fa-angle-down"></i>
@@ -66,6 +86,7 @@
                                 <th><?php echo $this->Paginator->sort('id') ?></th>
                                 <th><?php echo $this->Paginator->sort('name') ?></th>
                                 <th><?php echo $this->Paginator->sort('phone') ?></th>
+                                <th><?php echo $this->Paginator->sort('created') ?></th>
                                 <th class="actions" style="width:70px"></th>
                             </tr>
                             </thead>
@@ -75,6 +96,7 @@
                                     <td><?php echo $this->Number->format($subscriber->id) ?></td>
                                     <td><?php echo h($subscriber->name) ?></td>
                                     <td><?php echo h($subscriber->phone) ?></td>
+                                    <td><?php echo h($subscriber->created) ?></td>
                                     <td class="actions">
                                         <?php echo $this->Form->postLink(__('<span class="glyphicon glyphicon-trash"></span>'), ['action' => 'delete', $subscriber->id], ['escape' => false, 'confirm_delete' => true]) ?>
                                     </td>

@@ -9,6 +9,7 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property string $name
  * @property string $phone
+ * @property \Cake\I18n\Date|null $created
  */
 class Subscriber extends Entity
 {
@@ -23,6 +24,7 @@ class Subscriber extends Entity
      */
     protected $_accessible = [
         'name' => true,
-        'phone' => true
+        'phone' => true,
+        'created' => true
     ];
 }

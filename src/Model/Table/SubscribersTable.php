@@ -17,6 +17,8 @@ use Cake\Validation\Validator;
  * @method \App\Model\Entity\Subscriber patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
  * @method \App\Model\Entity\Subscriber[] patchEntities($entities, array $data, array $options = [])
  * @method \App\Model\Entity\Subscriber findOrCreate($search, callable $callback = null, $options = [])
+ *
+ * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
 class SubscribersTable extends Table
 {
@@ -33,6 +35,8 @@ class SubscribersTable extends Table
         $this->setTable('subscribers');
         $this->setDisplayField('name');
         $this->setPrimaryKey('id');
+
+        $this->addBehavior('Timestamp');
     }
 
     /**
