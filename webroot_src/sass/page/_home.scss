@@ -5,20 +5,6 @@
 
         &.video-block {
             padding-top: 20px;
-
-            .text-cover {
-                background: url("images/video-block-text-frame.png") top center no-repeat;
-                background-size: cover;
-                height: 270px;
-                width: 100%;
-                position: relative;
-
-                span {
-                    width: 75%;
-                    display: inline-block;
-                    @include objAbsoluteMiddle;
-                }
-            }
         }
 
         &.plus-points-block {

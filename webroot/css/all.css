@@ -11507,27 +11507,6 @@ footer .footer-info img {
   padding-top: 20px;
 }
 
-.page.home .block.video-block .text-cover {
-  background: url(../webroot/images/render/video-block-text-frame.png) top center no-repeat;
-  background-size: cover;
-  height: 270px;
-  width: 100%;
-  position: relative;
-}
-
-.page.home .block.video-block .text-cover span {
-  width: 75%;
-  display: inline-block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  /* IE 9 */
-  -webkit-transform: translate(-50%, -50%);
-  /* Safari */
-}
-
 .page.home .block.plus-points-block {
   padding-bottom: 40px;
 }
