@@ -97,9 +97,6 @@
                                     <td><?php echo h($subscriber->name) ?></td>
                                     <td><?php echo h($subscriber->phone) ?></td>
                                     <td><?php echo h($subscriber->created) ?></td>
-                                    <td class="actions">
-                                        <?php echo $this->Form->postLink(__('<span class="glyphicon glyphicon-trash"></span>'), ['action' => 'delete', $subscriber->id], ['escape' => false, 'confirm_delete' => true]) ?>
-                                    </td>
                                 </tr>
                             <?php endforeach; ?>
                             </tbody>

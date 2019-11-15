@@ -1,4 +1,5 @@
 <?php
+
 namespace Admin\Controller;
 
 use Admin\Controller\AppController;
@@ -7,6 +8,7 @@ use Box\Spout\Writer\Style\StyleBuilder;
 use Box\Spout\Writer\WriterFactory;
 use Cake\Filesystem\File;
 use DateTime;
+
 /**
  * Subscribers Controller
  *
@@ -27,17 +29,37 @@ class SubscribersController extends AppController
         if (!empty($search = $this->request->getQuery('search'))) {
             $option['conditions'][] = [
                 "OR" => [
-                    'name LIKE' => "%" .$search. "%",
-                    'phone LIKE' => "%" .$search. "%",
+                    'name LIKE' => "%" . $search . "%",
+                    'phone LIKE' => "%" . $search . "%",
                 ]
             ];
         }
-        if(!empty($this->request->getQuery("date"))){
-            $option['conditions'][]=['created >=' => new DateTime($this->request->getQuery("date").' days')];
-        }
-        $this->paginate = $option;
-        $subscribers = $this->paginate($this->Subscribers);
+        if (!empty($this->request->getQuery("date"))) {
 
+            $newDateTime = new DateTime($this->request->getQuery("date") . ' days');
+            $newDateTime->setTime(0, 0, 0, 0);
+
+            if ($this->request->getQuery("date") === -1) {
+                $option['conditions'][] = [
+                    'created =' => $newDateTime,
+                ];
+            } else {
+                $yesterday = -1;
+                $yesterdayTime = new DateTime($yesterday . ' days');
+                $yesterdayTime->setTime(0, 0, 0, 0);
+                $option['conditions'][] = [
+                    "AND" => [
+                        'created >=' => $newDateTime,
+                        'created <=' => $yesterdayTime,
+                    ]
+                ];
+            }
+        }
+
+        $this->paginate = $option;
+
+        $subscribers = $this->paginate($this->Subscribers);
+//        dd($subscribers);
         $this->set(compact('subscribers'));
     }
 
@@ -121,7 +143,8 @@ class SubscribersController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
-    public function export() {
+    public function export()
+    {
         $this->loadModel('Subscribers');
 
         $writer = WriterFactory::create(Type::XLSX);
