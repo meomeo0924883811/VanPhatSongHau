@@ -6,7 +6,6 @@
 /.idea/*
 */.idea/*
 
-/vendor/*
 /node_modules/*
 webroot/assets
 webroot/assets/*
