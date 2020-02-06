@@ -40,7 +40,7 @@
     <div class="visual-text-container">
         <div class="container position-relative w-100 h-100">
             <div class="visual-text">
-                <strong class="content">CƠ HỘI CUỐI CÙNG SỞ HỮU <br />NỀN GIÁ GỐC GIAI ĐOẠN 1</strong>
+                <strong class="content">MỞ BÁN GIAI ĐOẠN 2 | 670 TRIỆU/ NỀN</strong>
                 <div>
                     <span class="cta cta-golden open-popup"><strong>ĐĂNG KÝ</strong></span>
                 </div>
