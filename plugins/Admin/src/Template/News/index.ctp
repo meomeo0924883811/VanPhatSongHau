@@ -52,7 +52,7 @@
                             <?php foreach ($news as $news): ?>
                                 <tr>
                                     <td><?php echo $this->Number->format($news->id) ?></td>
-                                    <td><h1><?php echo $news->title ?></h1></td>
+                                    <td><?php echo $news->title ?></td>
                                     <td><img style="width: auto; max-height: 200px;" src="<?php echo h($this->request->webroot.$news->thumbnail) ?>"/></td>
                                     <td><?php echo $boolean_status[$news->appear] ?></td>
                                     <td class="actions">
