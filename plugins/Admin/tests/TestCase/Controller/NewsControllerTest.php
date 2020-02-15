@@ -7,6 +7,8 @@ use Cake\TestSuite\TestCase;
 
 /**
  * Admin\Controller\NewsController Test Case
+ *
+ * @uses \Admin\Controller\NewsController
  */
 class NewsControllerTest extends TestCase
 {
@@ -18,9 +20,7 @@ class NewsControllerTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'plugin.Admin.News',
-        'plugin.Admin.Categories',
-        'plugin.Admin.Productbinding'
+        'plugin.Admin.News'
     ];
 
     /**

@@ -1,0 +1,17 @@
+#reading {
+
+    h1 {
+        text-align: left;
+        padding-bottom: 0;
+
+        &:before, &:after {
+            display: none;
+        }
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        position: relative;
+    }
+}

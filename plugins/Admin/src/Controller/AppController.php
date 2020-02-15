@@ -1,4 +1,5 @@
 <?php
+
 namespace Admin\Controller;
 
 use App\Controller\AppController as BaseController;
@@ -8,7 +9,8 @@ use Cake\Routing\Router;
 class AppController extends BaseController
 {
 
-    public $helpers = ['Admin.General'];//'Admin.JqueryUpload'
+    public $helpers = ['Admin.General', 'Admin.JqueryUpload'];//
+
     public function initialize()
     {
         $this->viewBuilder()->layout('Admin.admin');
@@ -17,8 +19,8 @@ class AppController extends BaseController
         $this->response->header(
             array(
                 'X-Frame-Options' => 'DENY',
-                'X-XSS-Protection'=> 1,
-                'Strict-Transport-Security'=>'max-age=15552000; includeSubDomains; preload'
+                'X-XSS-Protection' => 1,
+                'Strict-Transport-Security' => 'max-age=15552000; includeSubDomains; preload'
             )
         );
         $this->loadComponent('Auth', [
@@ -42,14 +44,16 @@ class AppController extends BaseController
                 'Form' => [
                     'fields' => ['username' => 'email']
                 ]
-            ] ,
+            ],
             //'storage' => 'Session',
             'authError' => 'You can not access that page',
             'authorize' => ['Controller']
         ]);
     }
+
     //public $logged_in = false;
     public $current_user = null;
+
     public function beforeFilter(Event $event)
     {
         $this->current_user = $this->Auth->user();
@@ -69,12 +73,46 @@ class AppController extends BaseController
                 'sub_menu' => array(
                     'index' => array(
                         'text' => 'List users',
-                        'link' => Router::url(['controller' => 'users','action' => 'index']),
+                        'link' => Router::url(['controller' => 'users', 'action' => 'index']),
                         'icon' => '',
                     ),
                     'add' => array(
                         'text' => 'Add new users',
                         'link' => Router::url(['controller' => 'users', 'action' => 'add']),
+                        'icon' => '',
+                    )
+                )
+            ),
+            'images' => array(
+                'text' => 'Images',
+                'link' => Router::url(['controller' => 'images', 'action' => 'index']),
+                'icon' => '',
+                'sub_menu' => array(
+                    'index' => array(
+                        'text' => 'List images',
+                        'link' => Router::url(['controller' => 'images', 'action' => 'index']),
+                        'icon' => '',
+                    ),
+                    'add' => array(
+                        'text' => 'Add new images',
+                        'link' => Router::url(['controller' => 'images', 'action' => 'add']),
+                        'icon' => '',
+                    )
+                )
+            ),
+            'news' => array(
+                'text' => 'News',
+                'link' => Router::url(['controller' => 'news', 'action' => 'index']),
+                'icon' => '',
+                'sub_menu' => array(
+                    'index' => array(
+                        'text' => 'List news',
+                        'link' => Router::url(['controller' => 'news', 'action' => 'index']),
+                        'icon' => '',
+                    ),
+                    'add' => array(
+                        'text' => 'Add news',
+                        'link' => Router::url(['controller' => 'news', 'action' => 'add']),
                         'icon' => '',
                     )
                 )
@@ -87,10 +125,10 @@ class AppController extends BaseController
         );
         $this->set('menu_items', $menu_items);
         $menu_active = strtolower($this->request->params['controller']);
-        if(!in_array($menu_active, array_keys($menu_items))){
-            foreach($menu_items as $key_menu => $menu){
+        if (!in_array($menu_active, array_keys($menu_items))) {
+            foreach ($menu_items as $key_menu => $menu) {
                 $sub_menu = !empty($menu_items[$key_menu]['sub_menu']) ? $menu_items[$key_menu]['sub_menu'] : array();
-                if(in_array($menu_active, array_keys($sub_menu))){
+                if (in_array($menu_active, array_keys($sub_menu))) {
                     $sub_menu_active = $menu_active;
                     $menu_active = $key_menu;
                     break;
@@ -102,17 +140,13 @@ class AppController extends BaseController
         $this->set('sub_menu_active', $sub_menu_active != '' ? $sub_menu_active : 'index');
 
         $SessionExprieTime = $this->request->session()->read('Admin.SessionExprieTime');
-        if(!empty($SessionExprieTime))
-        {
-            if($SessionExprieTime <= time())
-            {
-                if($SessionExprieTime <= time())
-                {
+        if (!empty($SessionExprieTime)) {
+            if ($SessionExprieTime <= time()) {
+                if ($SessionExprieTime <= time()) {
                     $controller = $this->request->params['controller'];
                     $action = $this->request->params['action'];
-                    $avoid_action = array('validateSessionExprie','sessionLogout','login');
-                    if( $controller != 'Users' || ($controller == 'Users' && !in_array($action,$avoid_action)))
-                    {
+                    $avoid_action = array('validateSessionExprie', 'sessionLogout', 'login');
+                    if ($controller != 'Users' || ($controller == 'Users' && !in_array($action, $avoid_action))) {
                         $this->Auth->logout();
                     }
                 }
@@ -121,25 +155,28 @@ class AppController extends BaseController
         $this->set('SessionExprieIn', $this->createSessionExprie());
         $this->set('webroot_full', Router::url('/', true));
 
-        if(in_array($this->request->params['action'], array('update_order'))){
+        if (in_array($this->request->params['action'], array('update_order'))) {
             $this->eventManager()->off($this->Csrf);
         }
     }
-    function createSessionExprie(){
+
+    function createSessionExprie()
+    {
         $controller = $this->request->params['controller'];
         $action = $this->request->params['action'];
-        $avoid_action = array('validateSessionExprie','sessionLogout','login');
-        if( $controller != 'Users' || ($controller == 'Users' && !in_array($action,$avoid_action)))
-        {
+        $avoid_action = array('validateSessionExprie', 'sessionLogout', 'login');
+        if ($controller != 'Users' || ($controller == 'Users' && !in_array($action, $avoid_action))) {
             $time = time();
             $SessionExprieTime = strtotime(date('Y-m-d H:i:s') . " + 20 minutes");
-            $this->request->session()->write('Admin.SessionExprieTime',$SessionExprieTime);
+            $this->request->session()->write('Admin.SessionExprieTime', $SessionExprieTime);
             $SessionExprieIn = $SessionExprieTime - $time;
             return $SessionExprieIn;
         }
         return '';
     }
-    public function isAuthorized($user){
+
+    public function isAuthorized($user)
+    {
         return true;
     }
 

@@ -632,6 +632,32 @@
                 }
             }
         }
+
+        &.images-block {
+
+            #newest-image {
+                margin-top: 30px;
+                margin-bottom: 50px;
+
+                .newest-image {
+                    padding: 0 15px;
+                }
+
+                .slick-dots {
+                    bottom: -40px;
+
+                    li {
+                        button:before {
+                            border: 1px solid $blue-headline;
+                        }
+
+                        &.slick-active button:before {
+                            background: $blue-headline;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 

@@ -2,9 +2,12 @@
 namespace App\Controller;
 
 use Cake\Core\Configure;
+use Cake\Mailer\Email;
+use Cake\ORM\TableRegistry;
 use Cake\Routing\Router;
 use App\Controller\AppController;
-use Cake\Console\ShellDispatcher;
+require_once(ROOT .DS. 'src'.DS. 'Lib' . DS .'image_load.php');
+use image_load;
 
 
 
@@ -21,11 +24,34 @@ class FrontendController extends AppController {
 
         $BaseURLs = ['images' => Router::url('/')];
         $this->set('BaseURLs', $BaseURLs);
+        $this->set('home', false);
     }
 
 	public function index() {
-
+        $this->loadModel('Images');
+        $this->loadModel('News');
+        $images = $this->Images->find('all')->toArray();
+        $news = $this->News->find('all')->toArray();
+        $this->set('images', $images);
+        $this->set('news', $news);
+        $this->set('home', true);
 	}
+
+    public function news($id = 0) {
+        $this->autoRender = false;
+        $this->loadModel('News');
+
+        $news_related = $this->News->find('all')->where([
+            'id !=' => $id
+        ])->order('rand()')->limit(5)->toArray();
+
+        $page_content = $this->News->find('all')->where([
+            'id = ' => $id
+        ])->first();
+        $this->set('page_content', $page_content);
+        $this->set('news_related', $news_related);
+        $this->render('news');
+    }
 
     public function subscribe() {
         $this->autoRender = false;

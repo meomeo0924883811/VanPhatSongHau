@@ -14,3 +14,17 @@
 .change_status .icon-ban{color:red}
 .change_status .icon-check{color:green}
 .ct_center{text-align: center}
+.va_middle{vertical-align: middle !important;}
+.product_color_block_item{
+    border: 1px solid #e5e5e5;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+.btn-colorselector{border: 1px solid #e5e5e5}
+.remove_item_product_color{
+    background: red;
+    padding: 2px 2px 4px;
+    float: right;
+    cursor: pointer;
+}
+.language a.active{background-color: #eee}

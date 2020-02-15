@@ -59,7 +59,6 @@
 
 	<link rel="shortcut icon" href="favicon.ico"/>
 	<script src="<?php echo $this->request->webroot ?>admin/backend/global/plugins/jquery.min.js"></script>
-    <script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=5s3m1f8lsgzsp7ma6b9fbb9tmhgsh3t1ybdtv71j37497y6f"></script>
     <script>
         (function(w,d,s,g,js,fs){
             g=w.gapi||(w.gapi={});g.analytics={q:[],ready:function(f){this.q.push(f);}};
@@ -139,7 +138,7 @@ $script_include = array(
 		'/admin/js/libs/fancybox.js',
 		'/admin/js/libs/jquery.datetimepicker.js',
 		'/admin/strength_password/strength.js',
-//		'/plugins/tinymce/tinymce.min.js',
+		'/plugins/tinymce/tinymce.min.js',
 		'/admin/plugins/select2/js/select2.min.js',
 		'/admin/js/tock.min.js',
 		'/admin/js/vendor/modernizr-2.6.2.min.js',

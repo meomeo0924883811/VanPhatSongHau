@@ -55,10 +55,10 @@ function clsMainProcess(){
 	this.get_data_form =  function(form_ids)
     {
         var parentObj = this;
-        var params = {}; 
+        var params = {};
         var temp_name = ''
-        $(form_ids).find("input[type=radio]:checked,input[type=checkbox], input[type='text'], input[type='hidden'],input[type='email'],input[type='password'], select, textarea").each(function()   
-        { 
+        $(form_ids).find("input[type=radio]:checked,input[type=checkbox], input[type='text'], input[type='hidden'],input[type='email'],input[type='password'], select, textarea").each(function()
+        {
             //alert(this.name);
             if(this.type == 'checkbox')
             {
@@ -67,19 +67,19 @@ function clsMainProcess(){
                     params[this.name] = parentObj.get_values_checkbox(this.name);
                     temp_name =  this.name;
                 }
-            }               
+            }
             else
             {
                 if(this.value != $(this).attr('placeholder'))
                 {
-                    params[this.name] = this.value; 
+                    params[this.name] = this.value;
                 }
                 else
                 {
                     params[this.name] = '';
-                }           
+                }
             }
-                    
+
         });
         return params;
     };
@@ -116,7 +116,7 @@ function clsMainProcess(){
             timepicker:false,
             scrollInput: false
         });
-        /*tinymce.init({
+        tinymce.init({
             selector:'.tinymce',
             height: 200,
             plugins: [
@@ -131,17 +131,18 @@ function clsMainProcess(){
             //],
             valid_elements : "*,*[*]",
             forced_root_block: false, // br instead of <P>
+            force_p_newlines : false,
             relative_urls:false,
-            //external_filemanager_path: window_app.webroot_full + "plugins/ResponsiveFilemanager/filemanager/",
-            //filemanager_title:"Responsive Filemanager" ,
-            //external_plugins: { "filemanager" : window_app.webroot_full + "plugins/ResponsiveFilemanager/filemanager/plugin.min.js"}
-        });*/
+            external_filemanager_path: window_app.webroot_full + "plugins/ResponsiveFilemanager/filemanager/",
+            filemanager_title:"Responsive Filemanager" ,
+            external_plugins: { "filemanager" : window_app.webroot_full + "plugins/ResponsiveFilemanager/filemanager/plugin.min.js"}
+        });
     }
 }
 var mainProcess = new clsMainProcess();
 
 $(document).ready(function(){
-    mainProcess.main_init();   
+    mainProcess.main_init();
 });
 
 

@@ -18308,12 +18308,6 @@ $('#map-slider').slick({
     ]
 });
 
-$('.open-image-popup').click(function () {
-    let src = $(this).attr('src');
-    $('#popup-image img').attr('src', src);
-    SE.clsPopup.open('#popup-image');
-})
-
 $('#map-slider').on('afterChange', function(event, slick, currentSlide){
     $('#area-links .nav-link').removeClass('active');
     $('#area-links .tab-pane').removeClass('active show');
@@ -18329,6 +18323,46 @@ $('#area-links .nav-link').click(function () {
 $('.single-image-preview').click(function (){
     let slide = $(this).attr('order') - 1;
     $('#quality-images').slick('slickGoTo',slide);
+});
+
+$('#newest-image').slick({
+    dots: true,
+    infinite: true,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    speed: 300,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    responsive: [
+        {
+            breakpoint: 992,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+            }
+        }
+    ]
+});
+
+$('#news-list').slick({
+    dots: true,
+    infinite: true,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    speed: 300,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    responsive: [
+        {
+            breakpoint: 992,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+            }
+        }
+    ]
 });
 
 $(window).scroll(function () {
@@ -18376,6 +18410,34 @@ setTimeout(function () {
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 }, 0);
+
+
+window.onload = function () {
+    $('.open-image-popup').click(function () {
+        let src = $(this).attr('src');
+        $('#popup-image img').attr('src', src);
+        SE.clsPopup.open('#popup-image');
+    });
+
+    $('#reading').removeClass('d-none');
+
+    $('#reading img').each(function(){
+        $(this).attr('src',window_app.webroot + $(this).attr('src').split('../').join(''));
+        $(this).addClass('open-image-popup');
+    });
+
+    console.API;
+
+    if (typeof console._commandLineAPI !== 'undefined') {
+        console.API = console._commandLineAPI; //chrome
+    } else if (typeof console._inspectorCommandLineAPI !== 'undefined') {
+        console.API = console._inspectorCommandLineAPI; //Safari
+    } else if (typeof console.clear !== 'undefined') {
+        console.API = console;
+    }
+
+    console.API.clear();
+};
 
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(2), __webpack_require__(1)))
 

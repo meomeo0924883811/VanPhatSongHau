@@ -15,8 +15,8 @@ class JqueryUploadHelper extends Helper {
 	public $helpers = array(
 		'Html', 'Form'
 	);
-    
-    public $upload_temp = 'files/uploads/temp/';
+
+    public $upload_temp = 'files/upload/temp/';
     public $upload_server = 'plugins/jQueryFileUpload/server/php/';
 
 
@@ -105,9 +105,9 @@ class JqueryUploadHelper extends Helper {
 
     /**
  * beforeRender callback
- * 
+ *
  * @param string $viewFile The view file that is going to be rendered
- * 
+ *
  * @return void
  */
 	public function beforeRender(Event $event, $viewFile) {

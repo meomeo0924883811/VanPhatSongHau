@@ -51,6 +51,7 @@ Router::scope('/', function ($routes) {
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
 
 	$routes->connect('/',['controller' => 'Frontend', 'action' => 'index']);
+	$routes->connect('/tin-tuc/:id',['controller' => 'Frontend', 'action' => 'news'], ['pass' => ['id']]);
 
     $routes->connect('/subscribe',['controller' => 'Frontend', 'action' => 'subscribe']);
     /**

@@ -61,12 +61,6 @@
 <?= $this->element('modules/image-popup'); ?>
 <div class="popup" id="loading"></div>
 <a href="#" id="back-to-top"></a>
-<div class="fb-customerchat"
-     page_id="2272385429514202"
-     theme_color="#D3D3D3"
-     ref="live-chat">
-</div>
-
 <?= $this->element('includes/all_js_css_footer'); ?>
 </body>
 </html>
