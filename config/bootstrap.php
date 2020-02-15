@@ -335,3 +335,8 @@ else {
 //    'sheet_id' => '1-P7atbbata4Z52z1O4tX2DPkOhKxbkLPLnWNlK04owQ',
 //    'gid' => '806953753'
 //]);
+
+Configure::write('boolean_status', [
+    0 => 'Không',
+    1 => 'Có',
+]);

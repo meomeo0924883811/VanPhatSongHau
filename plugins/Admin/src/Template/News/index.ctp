@@ -42,6 +42,7 @@
                             <thead>
                             <tr>
                                 <th><?php echo $this->Paginator->sort('id') ?></th>
+                                <th><?php echo $this->Paginator->sort('title') ?></th>
                                 <th><?php echo $this->Paginator->sort('thumbnail') ?></th>
                                 <th><?php echo $this->Paginator->sort('appear') ?></th>
                                 <th class="actions" style="width:70px"></th>
@@ -51,8 +52,9 @@
                             <?php foreach ($news as $news): ?>
                                 <tr>
                                     <td><?php echo $this->Number->format($news->id) ?></td>
+                                    <td><h1><?php echo $news->title ?></h1></td>
                                     <td><img style="width: auto; max-height: 200px;" src="<?php echo h($this->request->webroot.$news->thumbnail) ?>"/></td>
-                                    <td><?php echo h($news->appear) ?></td>
+                                    <td><?php echo $boolean_status[$news->appear] ?></td>
                                     <td class="actions">
                                         <?php echo $this->Html->link(__('<span class="glyphicon glyphicon-search"></span>'), ['action' => 'view', $news->id], ['escape' => false]) ?>
                                         <?php echo $this->Html->link(__('<span class="glyphicon glyphicon-edit"></span>'), ['action' => 'edit', $news->id], ['escape' => false]) ?>

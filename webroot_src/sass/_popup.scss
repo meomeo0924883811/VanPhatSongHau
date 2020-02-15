@@ -47,9 +47,9 @@
 
     &#popup-image img{
         @include objAbsoluteMiddle;
-        width: calc(100% - 15px);
-        max-width: 1500px;
-        height: auto;
+        width: auto;
+        max-width: 100%;
+        height: 95%;
     }
 }
 

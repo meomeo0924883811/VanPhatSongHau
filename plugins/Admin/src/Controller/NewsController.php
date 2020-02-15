@@ -4,7 +4,8 @@ namespace Admin\Controller;
 use Cake\Filesystem\Folder;
 require_once(ROOT .DS. 'src'.DS. 'Lib' . DS .'image_load.php');
 use image_load;
-
+use Admin\Controller\AppController;
+use Cake\Core\Configure;
 /**
  * News Controller
  *
@@ -18,11 +19,15 @@ class NewsController extends AppController
      *
      * @return \Cake\Http\Response|null
      */
+
+    public $boolean_status = [];
     public function index()
     {
         $news = $this->paginate($this->News);
-
+        $this->boolean_status = Configure::read('boolean_status');
+        $this->set('boolean_status', $this->boolean_status);
         $this->set(compact('news'));
+        $this->set(compact('boolean_status'));
     }
 
     /**

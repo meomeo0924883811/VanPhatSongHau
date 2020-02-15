@@ -11472,9 +11472,9 @@ footer .footer-info img {
   /* IE 9 */
   -webkit-transform: translate(-50%, -50%);
   /* Safari */
-  width: calc(100% - 15px);
-  max-width: 1500px;
-  height: auto;
+  width: auto;
+  max-width: 100%;
+  height: 95%;
 }
 
 @media (max-width: 767px) {

@@ -20,8 +20,6 @@ class FrontendController extends AppController {
 		$this->viewBuilder()->layout('frontend');
         $this->response->disableCache();
 		$this->set('webroot_full', Router::url('/', true));
-
-
         $BaseURLs = ['images' => Router::url('/')];
         $this->set('BaseURLs', $BaseURLs);
         $this->set('home', false);

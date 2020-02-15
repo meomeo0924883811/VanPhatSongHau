@@ -3,19 +3,24 @@
         <a class="navbar-brand" href="<?= $this->request->webroot ?>">
             <img src="<?= $this->request->webroot ?>images/logo.svg" width="50" height="auto" alt="logo">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse justify-content-md-end navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav">
                 <?php if ($home) : ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#images"><strong>HÌNH ẢNH</strong></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#news"><strong>TIN TỨC</strong></a>
-                    </li>
+                    <?php if (count($images) > 0) : ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#images"><strong>HÌNH ẢNH</strong></a>
+                        </li>
+                    <?php endif; ?>
+                    <?php if (count($news) > 0) : ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#news"><strong>TIN TỨC</strong></a>
+                        </li>
+                    <?php endif; ?>
                     <li class="nav-item">
                         <a class="nav-link" href="#project-overview"><strong>TỔNG QUAN</strong></a>
                     </li>

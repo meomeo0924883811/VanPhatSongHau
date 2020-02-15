@@ -7,8 +7,8 @@
         echo $this->element ('modules/home/chatluongkietxuat');
         echo $this->element ('modules/home/sanphamnoibat');
         echo $this->element ('modules/home/chinhsachthanhtoan');
-        echo $this->element ('modules/home/tintuc');
-        echo $this->element ('modules/home/hinhanhmoinhat');
+        if (count($news) != 0) echo $this->element ('modules/home/tintuc');
+        if (count($images) != 0) echo $this->element ('modules/home/hinhanhmoinhat');
         echo $this->element ('modules/home/9yeuto');
     ?>
 </section>
