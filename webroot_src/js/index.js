@@ -89,11 +89,11 @@ $('#news-list').slick({
     dots: true,
     infinite: true,
     arrows: false,
-    autoplay: true,
-    autoplaySpeed: 5000,
+    // autoplay: true,
+    // autoplaySpeed: 5000,
     speed: 300,
-    slidesToShow: 2,
-    slidesToScroll: 2,
+    slidesToShow: 3,
+    slidesToScroll: 3,
     responsive: [
         {
             breakpoint: 992,

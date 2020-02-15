@@ -658,6 +658,36 @@
                 }
             }
         }
+
+        &.news-block {
+
+            a {
+                color: $blue-headline;
+                text-decoration: none;
+                outline: none;
+
+                b {
+                    margin-top: 10px;
+                    font-size: 26px;
+                    display: inline-block;
+                }
+            }
+        }
+
+        &.news-block, &.images-block {
+            
+            .slick-dots {
+                bottom: -25px;
+
+                li button:before {
+                    border: 1px solid $blue-headline;
+                }
+
+                li.slick-active button:before {
+                    background: $blue-headline;
+                }
+            }
+        }
     }
 }
 
@@ -958,6 +988,13 @@
                             }
                         }
                     }
+                }
+            }
+
+            &.news-block {
+
+                b {
+                    font-size: 3.6vw;
                 }
             }
         }
