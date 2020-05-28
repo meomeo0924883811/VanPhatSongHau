@@ -53,7 +53,7 @@
     <div class="visual-text-container">
         <div class="container position-relative w-100 h-100">
             <div class="visual-text">
-                <strong class="content">MỞ BÁN GIAI ĐOẠN 2 | 670 TRIỆU/ NỀN</strong>
+                <strong class="content" style="text-transform: uppercase;">Cặp Nền Góc Đường Số 7 [195m2] Chỉ 1,7 Tỷ</strong>
                 <div>
                     <span class="cta cta-golden open-popup"><strong>ĐĂNG KÝ</strong></span>
                 </div>
